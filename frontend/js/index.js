@@ -27,7 +27,7 @@
 // });
 var input_username, input_email, input_password, input_address, 
 selectedChallengeDays, challengeDays = 1, day_img,
-changeImgInterval; 
+changeImgInterval, selected_mascot; 
 
 function saveRegistrationData(){
     input_username = document.getElementById("input_name").value;
@@ -36,17 +36,51 @@ function saveRegistrationData(){
     input_address = document.getElementById("input_address").value;
 }
 
-function startChallengeProgram(){
-    console.log(input_username, input_email, input_password, input_address);
-    day_img = document.getElementById("day-img");
-    selectedChallengeDays = 3, interval = 3000;
-    changeImgInterval = setInterval(changeImg, interval);
+//Funktion auto change Img
+// function startChallengeProgram(){
+//     console.log(input_username, input_email, input_password, input_address);
+//     day_img = document.getElementById("day-img");
+//     selectedChallengeDays = 3, interval = 3000;
+//     changeImgInterval = setInterval(changeImg, interval);
+// }
+// function changeImg(){
+//     challengeDays++;
+//     day_img.src = "../img/test_number_"+challengeDays+".png";
+//     if(challengeDays === selectedChallengeDays){
+//         clearInterval(changeImgInterval);
+//     }
+// }
+
+function showInChallenge(){
+    console.log("mkmk");
+    document.getElementById("mascotLevel").classList.add("d-none");
+    document.getElementById("inChallengeDiv").classList.remove("d-none");
+    document.getElementById("dailyQuestionDiv").classList.add("d-none");
+}
+
+function showDailyQuestion(){
+    //hide challengeDiv, show dailyQuestionDiv
+    document.getElementById("mascotLevel").classList.add("d-none");
+    document.getElementById("inChallengeDiv").classList.add("d-none");
+    document.getElementById("dailyQuestionDiv").classList.remove("d-none");
+}
+
+function challengeDayAddOne(){
+    //show challengeDiv, hide dailyQuestionDiv
+    document.getElementById("mascotLevel").classList.add("d-none");
+    document.getElementById("inChallengeDiv").classList.add("d-none");
+    document.getElementById("dailyQuestionDiv").classList.remove("d-none");
+
+    changeImg();
 }
 
 function changeImg(){
+    day_img = document.getElementById("day-img");
     challengeDays++;
+    console.log(challengeDays);
     day_img.src = "../img/test_number_"+challengeDays+".png";
-    if(challengeDays === selectedChallengeDays){
-        clearInterval(changeImgInterval);
-    }
+}
+
+function showInChallenge(){
+    //if mascot value = 1, avatar
 }
