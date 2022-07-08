@@ -10,10 +10,11 @@
     <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <form id="form_registration" class="needs-validation">
+    <main class="d-flex justify-content-center h-100">
+      <form id="form_registration" class="needs-validation w-75">
         <div class="title"> Registration </div>
         <div class="form-group row">
-          <label for="input_name" class="col-md-2 col-form-label float-right">Name</label>
+          <label for="input_name" class="col-md-4 col-form-label float-right">Name</label>
           <div class="col-md-6">
             <input type="name" class="form-control" id="input_name" placeholder="Name">
             <div class="invalid-feedback">
@@ -23,7 +24,7 @@
           
         </div>
         <div class="form-group row">
-            <label for="input_email" class="col-md-2 col-form-label float-right">E-Mail</label>
+            <label for="input_email" class="col-md-4 col-form-label float-right">E-Mail</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_email" placeholder="E-Mail">
               <div class="invalid-feedback">
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input_password" class="col-md-2 col-form-label float-right">Password</label>
+            <label for="input_password" class="col-md-4 col-form-label float-right">Password</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_password" placeholder="Password">
               <div class="invalid-feedback">
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input_address" class="col-md-2 col-form-label float-right">Address</label>
+            <label for="input_address" class="col-md-4 col-form-label float-right">Address</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_address" placeholder="Address">
               <div class="invalid-feedback">
@@ -49,8 +50,10 @@
               </div>
             </div>
         </div>
+        <a class="btn btn-primary" href="./mascot.html" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
     </form>
-    <a class="btn btn-primary" href="./mascot.html" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
+    </main>
+    
   </body>
   <footer>
     <script src="../js/index.js"></script>
