@@ -34,6 +34,13 @@ function saveRegistrationData(){
     input_email = document.getElementById("input_email").value;
     input_password = document.getElementById("input_password").value;
     input_address = document.getElementById("input_address").value;
+
+    fetch('/register',{
+        method: 'POST',
+        body: JSON.stringify(data),
+    }).then(response => response.json()).catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
 //Funktion auto change Img
