@@ -108,7 +108,7 @@ function initMainPage(){
     btn_continue_challenge.addEventListener("click", function(){
         showDiv(div_inChallenge);
         hideDiv(div_daily_question);
-        changeImg();
+        changeImg(day_img);
     });
 }
 
@@ -120,9 +120,9 @@ function hideDiv(div){
     div.classList.add("d-none");
 }
 
-function changeImg(){
+function changeImg(img){
     challengeDays++;
-    day_img.src = "../img/test_number_"+challengeDays+".png";
+    img.src = "../img/test_number_"+challengeDays+".png";
 }
 
 function showInChallenge(){

@@ -11,10 +11,17 @@
   </head>
   <body>
     <main class="d-flex justify-content-center h-100">
-      <form id="form_registration" class="needs-validation w-75">
+      <div id="welcomeDiv" class="w-75">
+        <div>
+          Congratulations! By choosing Good Fast you made the right decison.
+        </div>
+        <img src="../img/mascot_frosch.png">
+        <img src="../img/trees_and_forest.png" class="w-100 align-self-end h-50">
+      </div>
+      <form id="form_registration" class="needs-validation w-75 d-none">
         <div class="title"> Registration </div>
         <div class="form-group row">
-          <label for="input_name" class="col-md-4 col-form-label float-right">Name</label>
+          <label for="input_name" class="col-md-4 col-form-label text-right">Name</label>
           <div class="col-md-6">
             <input type="name" class="form-control" id="input_name" placeholder="Name">
             <div class="invalid-feedback">
@@ -24,7 +31,7 @@
           
         </div>
         <div class="form-group row">
-            <label for="input_email" class="col-md-4 col-form-label float-right">E-Mail</label>
+            <label for="input_email" class="col-md-4 col-form-label text-right">E-Mail</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_email" placeholder="E-Mail">
               <div class="invalid-feedback">
@@ -33,7 +40,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input_password" class="col-md-4 col-form-label float-right">Password</label>
+            <label for="input_password" class="col-md-4 col-form-label text-right">Password</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_password" placeholder="Password">
               <div class="invalid-feedback">
@@ -42,7 +49,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input_address" class="col-md-4 col-form-label float-right">Address</label>
+            <label for="input_address" class="col-md-4 col-form-label text-right">Address</label>
             <div class="col-md-6">
               <input type="name" class="form-control" id="input_address" placeholder="Address">
               <div class="invalid-feedback">
@@ -50,7 +57,9 @@
               </div>
             </div>
         </div>
-        <a class="btn btn-primary" href="./mascot.html" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
+        <a href="./mascot.html" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">
+          Next
+        </a>
     </form>
     </main>
     

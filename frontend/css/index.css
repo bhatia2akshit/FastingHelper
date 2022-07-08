@@ -1,7 +1,19 @@
+:root{
+    --hell-green-color: #C5E0B4;
+}
+
 .title{
     font-size: 36px;
 }
 
 body{
     width: 100%;
+}
+
+main{
+    background: white;
+}
+
+#form_registration, #welcomeDiv{
+    background: var(--hell-green-color);
 }
