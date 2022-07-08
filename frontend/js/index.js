@@ -53,23 +53,25 @@ function saveRegistrationData(){
 
 function showInChallenge(){
     console.log("mkmk");
-    document.getElementById("mascotLevel").classList.add("d-none");
-    document.getElementById("inChallengeDiv").classList.remove("d-none");
-    document.getElementById("dailyQuestionDiv").classList.add("d-none");
+    document.getElementById("mascotLevel").className = "d-none";
+    document.getElementById("inChallengeDiv").className = "";
+    document.getElementById("dailyQuestionDiv").className = "d-none";
 }
 
 function showDailyQuestion(){
+    console.log("mkmdddddk");
     //hide challengeDiv, show dailyQuestionDiv
-    document.getElementById("mascotLevel").classList.add("d-none");
-    document.getElementById("inChallengeDiv").classList.add("d-none");
-    document.getElementById("dailyQuestionDiv").classList.remove("d-none");
+    document.getElementById("mascotLevel").className = "";
+    document.getElementById("inChallengeDiv").className = "d-none";
+    document.getElementById("dailyQuestionDiv").className = "d-none";
 }
 
 function challengeDayAddOne(){
+    console.log("mkmk333333333333");
     //show challengeDiv, hide dailyQuestionDiv
-    document.getElementById("mascotLevel").classList.add("d-none");
-    document.getElementById("inChallengeDiv").classList.add("d-none");
-    document.getElementById("dailyQuestionDiv").classList.remove("d-none");
+    document.getElementById("mascotLevel").className = "d-none";
+    document.getElementById("inChallengeDiv").className = "d-none";
+    document.getElementById("dailyQuestionDiv").className = "";
 
     changeImg();
 }
