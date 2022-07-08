@@ -15,5 +15,8 @@ main{
 }
 
 #form_registration, #welcomeDiv{
-    background: var(--hell-green-color);
+  background: var(--hell-green-color);
+}
+.title{
+    font-size: 36px;
 }
