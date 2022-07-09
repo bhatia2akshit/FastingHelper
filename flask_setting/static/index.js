@@ -75,50 +75,99 @@ fetch('http://127.0.0.1:5000/program',{
 }
 
 
-function showInChallenge(){
-    console.log("mkmk");
-    document.getElementById("mascotLevel").className = "d-none";
-    document.getElementById("inChallengeDiv").className = "";
-    document.getElementById("dailyQuestionDiv").className = "d-none";
+// function showInChallenge(){
+//     console.log("mkmk");
+//     document.getElementById("mascotLevel").className = "d-none";
+//     document.getElementById("inChallengeDiv").className = "";
+//     document.getElementById("dailyQuestionDiv").className = "d-none";
+// }
+
+// function showDailyQuestion(){
+//     console.log("mkmdddddk");
+//     //hide challengeDiv, show dailyQuestionDiv
+//     document.getElementById("mascotLevel").className = "";
+//     document.getElementById("inChallengeDiv").className = "d-none";
+//     document.getElementById("dailyQuestionDiv").className = "d-none";
+// }
+
+// function challengeDayAddOne(){
+//     console.log("mkmk333333333333");
+//     //show challengeDiv, hide dailyQuestionDiv
+//     document.getElementById("mascotLevel").className = "d-none";
+//     document.getElementById("inChallengeDiv").className = "d-none";
+//     document.getElementById("dailyQuestionDiv").className = "";
+
+//     changeImg();
+
+//        data={team:team_name};
+//     fetch('http://127.0.0.1:5000/increment',{
+//         method: 'POST',
+//         body: JSON.stringify(data),
+//     }).then(response => response.json()).then(data => {console.log(data)}).catch((error) => {
+//         console.error('Error:', error);
+//     });
+// }
+
+// function changeImg(){
+//     day_img = document.getElementById("day-img");
+//     challengeDays++;
+//     console.log(challengeDays);
+//     day_img.src = "../img/test_number_"+challengeDays+".png";
+// }
+
+// function showInChallenge(){
+//     //if mascot value = 1, avatar
+// }
+function showRegistration(){
+    document.getElementById("welcomeDiv").classList.add("d-none");
+    document.getElementById("form_registration").classList.remove("d-none");
 }
 
-function showDailyQuestion(){
-    console.log("mkmdddddk");
-    //hide challengeDiv, show dailyQuestionDiv
-    document.getElementById("mascotLevel").className = "";
-    document.getElementById("inChallengeDiv").className = "d-none";
-    document.getElementById("dailyQuestionDiv").className = "d-none";
-}
+function initMainPage(){
+    let div_mascot_level = document.getElementById("mascotLevel"),
+    div_inChallenge = document.getElementById("inChallengeDiv"),
+    div_daily_question = document.getElementById("dailyQuestionDiv"),
+    btn_show_challenge = document.getElementById("btn_show_challenge"),
+    btn_emergency = document.getElementById("btn_emergencys"),
+    btn_next_day = document.getElementById("btn_next_day"),
+    btn_continue_challenge = document.getElementById("btn_continue_challenge"),
+    btn_stop_challenge = document.getElementById("btn_stop_challenge"),
+    day_img = document.getElementById("day-img");
 
-function challengeDayAddOne(){
-    console.log("mkmk333333333333");
-    //show challengeDiv, hide dailyQuestionDiv
-    document.getElementById("mascotLevel").className = "d-none";
-    document.getElementById("inChallengeDiv").className = "d-none";
-    document.getElementById("dailyQuestionDiv").className = "";
+    hideDiv(div_inChallenge);
+    hideDiv(div_daily_question);
 
-    changeImg();
-
-       data={team:team_name};
+    btn_show_challenge.addEventListener("click", function(){
+        showDiv(div_inChallenge);
+        hideDiv(div_mascot_level);
+    });
+    btn_next_day.addEventListener("click", function(){
+        showDiv(div_daily_question);
+        hideDiv(div_inChallenge);
+    });
+    btn_continue_challenge.addEventListener("click", function(){
+        showDiv(div_inChallenge);
+        hideDiv(div_daily_question);
+        changeImg(day_img);
+        data={team:team_name};
     fetch('http://127.0.0.1:5000/increment',{
         method: 'POST',
         body: JSON.stringify(data),
     }).then(response => response.json()).then(data => {console.log(data)}).catch((error) => {
         console.error('Error:', error);
     });
+    });
 }
 
-function changeImg(){
-    day_img = document.getElementById("day-img");
+function showDiv(div){
+    div.classList.remove("d-none");
+}
+
+function hideDiv(div){
+    div.classList.add("d-none");
+}
+
+function changeImg(img){
     challengeDays++;
-    console.log(challengeDays);
-    day_img.src = "../img/test_number_"+challengeDays+".png";
-}
-
-function showInChallenge(){
-    //if mascot value = 1, avatar
-}
-function showRegistration(){
-    document.getElementById("welcomeDiv").classList.add("d-none");
-    document.getElementById("form_registration").classList.remove("d-none");
+    img.src = "../static/test_number_"+challengeDays+".png";
 }
