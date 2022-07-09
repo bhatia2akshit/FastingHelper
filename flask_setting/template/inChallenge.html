@@ -9,38 +9,40 @@
     <link href="../static/index.css" rel="stylesheet" type="text/css">
     <link href="../static/bootstrap.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <div id="mascotLevel" class="">
-      <div class="title" id="mascot_level"> Level 1 </div>
-      <img id="mascot-img" class="img-fluid" src="../static/mascot_mix_bear.png" width="400" height=auto>
-      <form>
-          <div class="form-group row">
-              <label for="mascot_points" class="col-sm-2 col-form-label">Points</label>
-              <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="mascot_points" value="10">
+  <body onload="initMainPage()">
+    <main class="d-flex justify-content-center h-100">
+      <div id="mascotLevel" class="w-75">
+        <div class="title" id="mascot_level"> Level 1 </div>
+        <img id="mascot-img" class="img-fluid" src="../static/mascot_mix_bear.png" width="400" height=auto>
+        <form>
+            <div class="form-group row">
+                <label for="mascot_points" class="col-sm-2 col-form-label">Points</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="mascot_points" value="10">
+                </div>
               </div>
-            </div>
-      </form>
-      <button id="btn_to_in_challenge"  class="btn btn-primary" onclick="showInChallenge()">Show Day Countdown</button>
-    </div>
-    <div id="inChallengeDiv" class="">
-      <div class="title" id="challenge_day"> Day </div>
-      <img id="day-img" class="img-fluid" src="../static/test_number_1.png" width="500" height="500">
-      <div id="informations">info</div>
-      <button id="btn_emergencys" class="btn btn-primary">Emergency</button>
-      <button class="btn btn-primary" role="button" onclick="showDailyQuestion()">Next day</button>
-    </div>
-    <div id="dailyQuestionDiv" class="">
-      <div class="title"> Did you fast yesterday? </div>
-      <div class="row">
-          <div class="col">
-              <a class="btn btn-primary" role="button" id="btn_continue_challenge" type="submit" onclick="challengeDayAddOne()">Yes</a>
-          </div>
-          <div class="col">
-              <a class="btn btn-primary" href="./challengeFailedPage.html" role="button" id="btn_stop_challenge" type="submit">No</a>
-          </div>
+        </form>
+        <button id="btn_show_challenge" class="btn btn-primary">Show Day Countdown</button>
       </div>
-    </div>
+      <div id="inChallengeDiv" class="w-75">
+        <div class="title" id="challenge_day"> Day </div>
+        <img id="day-img" class="img-fluid" src="../static/test_number_1.png" width="500" height="500">
+        <div id="informations">info</div>
+        <button id="btn_emergencys" class="btn btn-primary">Emergency</button>
+        <button id="btn_next_day" class="btn btn-primary" role="button">Next day</button>
+      </div>
+      <div id="dailyQuestionDiv" class="w-75">
+        <div class="title"> Did you fast yesterday? </div>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary" role="button" id="btn_continue_challenge" type="submit">Yes</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary" href="./challengeFailedPage.html" role="button" id="btn_stop_challenge" type="submit">No</a>
+            </div>
+        </div>
+      </div>
+    </main>
   </body>
   <footer>
     <script src="../static/index.js"></script>
