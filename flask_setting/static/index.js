@@ -56,7 +56,7 @@ function chooseTeam(){
         console.error('Error:', error);
     });
 }
-funciton choose_program(){
+function choose_program(){
 if(document.getElementById('1').checked){
 value=1}
 else if(document.getElementById('2').checked){

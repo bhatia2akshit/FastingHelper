@@ -10,7 +10,17 @@
     <link href="../static/bootstrap.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <form id="form_registration" class="needs-validation">
+    <main class="d-flex justify-content-center h-100">
+    <div id="welcomeDiv" class="w-75">
+      <div>
+        <div class="big-text-field">
+          Congratulations! By choosing Good Fast you made the right decison.
+        </div>
+        <img src="../static/mascot_frosch.png" class="pb-3">
+        <img src="../static/trees_and_forest.png" class="w-75">
+      </div>
+    </div>
+    <form id="form_registration" class="needs-validation w-75 d-none">
         <div class="title"> Registration </div>
         <div class="form-group row">
           <label for="input_name" class="col-md-2 col-form-label float-right">Name</label>
@@ -49,8 +59,12 @@
               </div>
             </div>
         </div>
+    
+        <a class="btn btn-primary" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
+      
     </form>
-    <a class="btn btn-primary" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
+    
+    </main>
   </body>
   <footer>
     <script src="../static/index.js"></script>

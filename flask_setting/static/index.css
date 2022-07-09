@@ -1,5 +1,6 @@
 :root{
     --hell-green-color: #C5E0B4;
+    --text-field-bg: #A9D18E;
 }
 
 .title{
@@ -19,4 +20,9 @@ main{
 }
 .title{
     font-size: 36px;
+}
+.big-text-field{
+    width: 400px;
+    height: 150px;
+    background-color: var(--text-field-bg);
 }
