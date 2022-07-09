@@ -10,7 +10,9 @@
     <link href="../static/bootstrap.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <form id="form_choose_mascot" class="needs-validation">
+    <main class="d-flex justify-content-center h-100">
+      <div class="div-container mt-5">
+    <form id="form_choose_mascot" class="needs-validation w-75">
         <div class="title"> Choose mascot </div>
         <div class="form-group row">
           <select class="custom-select" id="select_mascot">
@@ -19,9 +21,11 @@
             <option id="fu" value="2">Kongfu Panda</option>
           </select>
         </div>
-    </form>
-    <a class="btn btn-primary" href="./index.html" role="button">Back</a>
+        <a class="btn btn-primary" href="./index.html" role="button">Back</a>
     <a class="btn btn-primary" href="./religion.html" role="button" id="btn_to_religion_page" type="submit" onclick="chooseTeam()" >Next</a>
+    </form>
+  </div>
+  </main>
   </body>
   <footer>
     <script src="../static/index.js"></script>
