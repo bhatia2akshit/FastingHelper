@@ -4,7 +4,10 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 
 import ast
-fasting_count=0
+fasting_round=0
+fast_limit=0
+current_day=0
+
 team=''
 team_level=1
 team_points=0
@@ -24,26 +27,29 @@ def register_user():
     email = data['email']
     address = data['address']
 
-    return "Positive"
+    return redirect('./mascot.html')
 
 
 #second screen
-@app.route('/mascot/',methods=['POST'])
+@app.route('/team/',methods=['POST'])
+@cross_origin()
 def choose_team():
+    global  team_level, team_points
     data=request.data
-    team=data['team_type']
+    team=data['team']
     team_level=1
-    team_points=10
+    team_points+=10
     return ""
 
 @app.route('/program/',methods=['POST'])
+@cross_origin()
 def choose_program():
-
+    global fast_limit
     data=request.data
-    fast_limit = data['fast_days']
-    global fasting_count
-    fasting_count +=1
-    # current_day = 0
+    fast_limit = data['value_input']
+
+
+
     # if len(current_day_count_list)==0:
     #     current_day_count_list.append(1)
     # elif len(current_day_count_list)>current_index:
@@ -52,21 +58,46 @@ def choose_program():
     # religion_list.append(religion)
     return ""
 
-
+@app.route('/increment/',methods=['POST'])
+@cross_origin()
 def increment_day():
-    # conn=sqlite3.connect('application.db')
-    # cursor=conn.cursor()
-    # cursor.execute('Select PROGRAM_NUMBER, DAY_COUNT from STATUS where EMAIL=%s')  # this will return the day he is on.
-    # program_number, day_count=cursor.fetchone()
-    program_number=name_program_list[current_index]
-    day_count = current_day_count_list[current_index]
-    day_count+=1
-    if (day_count==3 and program_number==3) or (day_count==7 and program_number==7) or (day_count==10 and program_number==10):
+
+    global current_day, fast_limit
+
+    current_day+=1
+
+
+    if (current_day==3 and fast_limit==3) or (current_day==7 and fast_limit==7) or (current_day==10 and fast_limit==10):
         #unlock the mascot
-        mascot_evolve()
+        mascot_evolve(fast_limit)
+        current_day=0
+
     else:
-        current_day_count_list[current_index]=day_count  # increment the day of fasting
         mascot_point_increment_daily()
+
+    return (team_level,team_points)
+
+def mascot_evolve(cycle_days):
+    '''give higher reward for higher fasting period'''
+
+    global team, team_level, team_points
+    if cycle_days==3:
+      #increase points by 100 points for evolution
+        increment = 100
+    elif cycle_days==7:
+        increment=200
+    else:
+        increment=300
+    if team_level == 10:
+        team_points+=increment
+    else:
+        team_level+=1
+        team_points+=increment
+
+def mascot_point_increment_daily():
+    '''increase 30 points as every day passes'''
+    global team_points
+    team_points+=30
 
 if __name__ == '__main__':
     app.run()

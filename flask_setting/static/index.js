@@ -34,23 +34,45 @@ function saveRegistrationData(){
     input_email = document.getElementById("input_email").value;
     input_password = document.getElementById("input_password").value;
     input_address = document.getElementById("input_address").value;
+
+    data={username:input_username,email:input_email,password:input_password,address:input_address};
+    fetch('http://127.0.0.1:5000/',{
+        method: 'POST',
+        body: JSON.stringify(data),
+    }).then(response => response.json()).catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
-//Funktion auto change Img
-// function startChallengeProgram(){
-//     console.log(input_username, input_email, input_password, input_address);
-//     day_img = document.getElementById("day-img");
-//     selectedChallengeDays = 3, interval = 3000;
-//     changeImgInterval = setInterval(changeImg, interval);
-// }
-// function changeImg(){
-//     challengeDays++;
-//     day_img.src = "../img/test_number_"+challengeDays+".png";
-//     if(challengeDays === selectedChallengeDays){
-//         clearInterval(changeImgInterval);
-//     }
-// }
+function chooseTeam(){
+    if(document.getElementById('avatar').checked){team_name = document.getElementById('avatar').value;}
+    else{team_name = document.getElementById('fu').value;}
 
+        data={team:team_name};
+    fetch('http://127.0.0.1:5000/team',{
+        method: 'POST',
+        body: JSON.stringify(data),
+    }).then(response => response.json()).catch((error) => {
+        console.error('Error:', error);
+    });
+}
+funciton choose_program(){
+if(document.getElementById('1').checked){
+value=1}
+else if(document.getElementById('2').checked){
+value=2}
+else {
+value=3}
+data={value_input:value}
+fetch('http://127.0.0.1:5000/program/',{
+        method: 'POST',
+        body: JSON.stringify(data),
+    }).then(response => response.json()).catch((error) => {
+        console.error('Error:', error);
+    });
+
+
+}
 
 
 function showInChallenge(){
@@ -76,6 +98,14 @@ function challengeDayAddOne(){
     document.getElementById("dailyQuestionDiv").className = "";
 
     changeImg();
+
+//       data={team:team_name};
+//    fetch('http://127.0.0.1:5000/increment/',{
+//        method: 'POST',
+//        body: JSON.stringify(data),
+//    }).then(response => response.json()).catch((error) => {
+//        console.error('Error:', error);
+//    });
 }
 
 function changeImg(){
