@@ -4,7 +4,7 @@
 }
 
 .title{
-    font-size: 36px;
+    font-size: 30px;
 }
 
 body{
@@ -25,4 +25,28 @@ main{
     width: 400px;
     height: 150px;
     background-color: var(--text-field-bg);
+    margin-left: auto;
+    margin-right: auto;
+}
+.middle-section{
+    height: auto;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bottom-section{
+    width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.right-arrow{
+    transform:rotate(180deg);
+}
+.div-container{
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    width: 402px;
+    height: auto;
 }

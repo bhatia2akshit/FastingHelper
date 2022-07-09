@@ -12,56 +12,72 @@
   <body>
     <main class="d-flex justify-content-center h-100">
     <div id="welcomeDiv" class="w-75">
-      <div>
+      <div class="div-container mt-5">
         <div class="big-text-field">
           Congratulations! By choosing Good Fast you made the right decison.
         </div>
-        <img src="../static/mascot_frosch.png" class="pb-3">
-        <img src="../static/trees_and_forest.png" class="w-75">
+        <div class="middle-section mt-2">
+          <img src="../static/mascot_frosch.png" class="pb-3 w-75">
+          <img src="../static/left_arrow.png" alt="" class="right-arrow ml-2" onclick="showRegistration()">
+        </div>
+        <div class="bottom-section mt-2">
+          <img src="../static/trees_and_forest.png" class="img-fluid">
+        </div>    
       </div>
     </div>
     <form id="form_registration" class="needs-validation w-75 d-none">
-        <div class="title"> Registration </div>
-        <div class="form-group row">
-          <label for="input_name" class="col-md-2 col-form-label float-right">Name</label>
-          <div class="col-md-6">
-            <input type="name" class="form-control" id="input_name" placeholder="Name">
-            <div class="invalid-feedback">
-                Please enter your name.:D
+      <div class="div-container mt-5">
+        <div class="big-text-field title">
+           Registration
+        </div>
+        <div class="middle-section mt-2">
+          <div class="form-group row">
+            <label for="input_name" class="col-md-3 pl-4 col-form-label float-right">Name</label>
+            <div class="col-md-8">
+              <input type="name" class="form-control" id="input_name" placeholder="Name">
+              <div class="invalid-feedback">
+                  Please enter your name.:D
+              </div>
+            </div>
+            
+          </div>
+          <div class="form-group row">
+              <label for="input_email" class="col-md-3 pl-4 col-form-label float-right">E-Mail</label>
+              <div class="col-md-8">
+                <input type="name" class="form-control" id="input_email" placeholder="E-Mail">
+                <div class="invalid-feedback">
+                  Please enter your E-Mail.:D
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">
+              <label for="input_password" class="col-md-3 pl-4 col-form-label float-right">Password</label>
+              <div class="col-md-8">
+                <input type="name" class="form-control" id="input_password" placeholder="Password">
+                <div class="invalid-feedback">
+                  Please enter a password.:D
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">
+              <label for="input_address" class="col-md-3 pl-4 col-form-label float-right">Address</label>
+              <div class="col-md-8">
+                <input type="name" class="form-control" id="input_address" placeholder="Address">
+                <div class="invalid-feedback">
+                  Please enter an address.:D
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <a href="../template/mascot.html"><img src="../static/left_arrow.png" alt="" class="right-arrow float-right mr-2" onclick="saveRegistrationData()"></a>
             </div>
           </div>
-          
         </div>
-        <div class="form-group row">
-            <label for="input_email" class="col-md-2 col-form-label float-right">E-Mail</label>
-            <div class="col-md-6">
-              <input type="name" class="form-control" id="input_email" placeholder="E-Mail">
-              <div class="invalid-feedback">
-                Please enter your E-Mail.:D
-              </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="input_password" class="col-md-2 col-form-label float-right">Password</label>
-            <div class="col-md-6">
-              <input type="name" class="form-control" id="input_password" placeholder="Password">
-              <div class="invalid-feedback">
-                Please enter a password.:D
-              </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="input_address" class="col-md-2 col-form-label float-right">Address</label>
-            <div class="col-md-6">
-              <input type="name" class="form-control" id="input_address" placeholder="Address">
-              <div class="invalid-feedback">
-                Please enter an address.:D
-              </div>
-            </div>
-        </div>
-    
-        <a class="btn btn-primary" role="button" id="btn_to_mascot_page" type="submit" onclick="saveRegistrationData()">Next</a>
-      
+        <div class="bottom-section mt-2">
+          <img src="../static/trees_and_forest.png" class="img-fluid">
+        </div>    
+      </div>
     </form>
     
     </main>

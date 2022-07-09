@@ -118,3 +118,7 @@ function changeImg(){
 function showInChallenge(){
     //if mascot value = 1, avatar
 }
+function showRegistration(){
+    document.getElementById("welcomeDiv").classList.add("d-none");
+    document.getElementById("form_registration").classList.remove("d-none");
+}
