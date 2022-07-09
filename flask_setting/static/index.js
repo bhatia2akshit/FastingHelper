@@ -51,6 +51,8 @@ function saveRegistrationData(){
 //     }
 // }
 
+
+
 function showInChallenge(){
     console.log("mkmk");
     document.getElementById("mascotLevel").className = "d-none";
