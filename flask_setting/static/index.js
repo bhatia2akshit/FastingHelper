@@ -64,7 +64,7 @@ value=2}
 else {
 value=3}
 data={value_input:value}
-fetch('http://127.0.0.1:5000/program/',{
+fetch('http://127.0.0.1:5000/program',{
         method: 'POST',
         body: JSON.stringify(data),
     }).then(response => response.json()).catch((error) => {
@@ -99,13 +99,13 @@ function challengeDayAddOne(){
 
     changeImg();
 
-//       data={team:team_name};
-//    fetch('http://127.0.0.1:5000/increment/',{
-//        method: 'POST',
-//        body: JSON.stringify(data),
-//    }).then(response => response.json()).catch((error) => {
-//        console.error('Error:', error);
-//    });
+       data={team:team_name};
+    fetch('http://127.0.0.1:5000/increment',{
+        method: 'POST',
+        body: JSON.stringify(data),
+    }).then(response => response.json()).then(data => {console.log(data)}).catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
 function changeImg(){
@@ -121,46 +121,4 @@ function showInChallenge(){
 function showRegistration(){
     document.getElementById("welcomeDiv").classList.add("d-none");
     document.getElementById("form_registration").classList.remove("d-none");
-}
-
-function initMainPage(){
-    let div_mascot_level = document.getElementById("mascotLevel"),
-    div_inChallenge = document.getElementById("inChallengeDiv"),
-    div_daily_question = document.getElementById("dailyQuestionDiv"),
-    btn_show_challenge = document.getElementById("btn_show_challenge"),
-    btn_emergency = document.getElementById("btn_emergencys"),
-    btn_next_day = document.getElementById("btn_next_day"),
-    btn_continue_challenge = document.getElementById("btn_continue_challenge"),
-    btn_stop_challenge = document.getElementById("btn_stop_challenge"),
-    day_img = document.getElementById("day-img");
-
-    hideDiv(div_inChallenge);
-    hideDiv(div_daily_question);
-
-    btn_show_challenge.addEventListener("click", function(){
-        showDiv(div_inChallenge);
-        hideDiv(div_mascot_level);
-    });
-    btn_next_day.addEventListener("click", function(){
-        showDiv(div_daily_question);
-        hideDiv(div_inChallenge);
-    });
-    btn_continue_challenge.addEventListener("click", function(){
-        showDiv(div_inChallenge);
-        hideDiv(div_daily_question);
-        changeImg(day_img);
-    });
-}
-
-function showDiv(div){
-    div.classList.remove("d-none");
-}
-
-function hideDiv(div){
-    div.classList.add("d-none");
-}
-
-function changeImg(img){
-    challengeDays++;
-    img.src = "../static/test_number_"+challengeDays+".png";
 }
